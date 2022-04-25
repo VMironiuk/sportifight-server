@@ -2,8 +2,9 @@ package main
 
 import (
 	"log"
-	"sportifight"
-	"sportifight/pkg/handler"
+
+	"github.com/VMironiuk/sportifight-server"
+	"github.com/VMironiuk/sportifight-server/pkg/handler"
 )
 
 func main() {
