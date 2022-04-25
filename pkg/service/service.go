@@ -10,7 +10,7 @@ type Service struct {
 	Auth
 }
 
-func NewService() *Service {
+func New() *Service {
 	return &Service{
 		Auth: NewAuthService(),
 	}
