@@ -1,11 +1,18 @@
 package handler
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/VMironiuk/sportifight-server/pkg/service"
+	"github.com/gin-gonic/gin"
+)
 
-type Handler struct{}
+type Handler struct {
+	service *service.Service
+}
 
-func New() *Handler {
-	return &Handler{}
+func New(service *service.Service) *Handler {
+	return &Handler{
+		service: service,
+	}
 }
 
 func (h *Handler) InitRoutes() *gin.Engine {
