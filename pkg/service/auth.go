@@ -1,6 +1,8 @@
 package service
 
-import "github.com/VMironiuk/sportifight-server"
+import (
+	"github.com/VMironiuk/sportifight-server"
+)
 
 type AuthService struct{}
 
