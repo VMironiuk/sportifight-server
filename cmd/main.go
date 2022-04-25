@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 	"sportifight"
-	"sportifight/handler"
+	"sportifight/pkg/handler"
 )
 
 func main() {
