@@ -2,14 +2,19 @@ package service
 
 import (
 	"github.com/VMironiuk/sportifight-server"
+	"github.com/VMironiuk/sportifight-server/pkg/repository"
 )
 
-type AuthService struct{}
-
-func NewAuthService() *AuthService {
-	return &AuthService{}
+type AuthService struct {
+	repo *repository.Repository
 }
 
-func (s *AuthService) CreateUser(sportifight.User) (int, error) {
-	return 42, nil
+func NewAuthService(repo *repository.Repository) *AuthService {
+	return &AuthService{
+		repo: repo,
+	}
+}
+
+func (s *AuthService) CreateUser(user sportifight.User) (int, error) {
+	return s.repo.CreateUser(user)
 }
