@@ -7,6 +7,7 @@ import (
 	"github.com/VMironiuk/sportifight-server/pkg/handler"
 	"github.com/VMironiuk/sportifight-server/pkg/repository"
 	"github.com/VMironiuk/sportifight-server/pkg/service"
+	_ "github.com/lib/pq"
 )
 
 func main() {
