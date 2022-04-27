@@ -10,7 +10,12 @@ import (
 )
 
 func main() {
-	repos := repository.New()
+	db, err := repository.NewPostgresDB()
+	if err != nil {
+		log.Fatalf("an error occurred while initializing db: %s\n", err.Error())
+	}
+
+	repos := repository.New(db)
 	services := service.New(repos)
 	handlers := handler.New(services)
 	srv := new(sportifight.Server)

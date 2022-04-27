@@ -2,12 +2,17 @@ package repository
 
 import (
 	"github.com/VMironiuk/sportifight-server"
+	"github.com/jmoiron/sqlx"
 )
 
-type AuthRepository struct{}
+type AuthRepository struct {
+	db *sqlx.DB
+}
 
-func NewAuthRepository() *AuthRepository {
-	return &AuthRepository{}
+func NewAuthRepository(db *sqlx.DB) *AuthRepository {
+	return &AuthRepository{
+		db: db,
+	}
 }
 
 func (*AuthRepository) CreateUser(user sportifight.User) (int, error) {
