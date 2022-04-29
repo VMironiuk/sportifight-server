@@ -4,6 +4,10 @@ import (
 	"github.com/jmoiron/sqlx"
 )
 
+const (
+	usersTable = "users"
+)
+
 func NewPostgresDB() (*sqlx.DB, error) {
 	db, err := sqlx.Open("postgres", "host=localhost port=5432 user=postgres dbname=postgres password=qwerty sslmode=disable")
 	if err != nil {
