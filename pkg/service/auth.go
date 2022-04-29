@@ -1,8 +1,14 @@
 package service
 
 import (
+	"crypto/sha1"
+	"fmt"
 	"github.com/VMironiuk/sportifight-server"
 	"github.com/VMironiuk/sportifight-server/pkg/repository"
+)
+
+const (
+	salt = "hasdfjhsajflb2312bfjlhds232ew3e32fe"
 )
 
 type AuthService struct {
@@ -16,5 +22,12 @@ func NewAuthService(repo repository.Auth) *AuthService {
 }
 
 func (s *AuthService) CreateUser(user sportifight.User) (int, error) {
+	user.Password = generatePasswordHash(user.Password)
 	return s.repo.CreateUser(user)
+}
+
+func generatePasswordHash(password string) string {
+	hash := sha1.New()
+	hash.Write([]byte(password))
+	return fmt.Sprintf("%x", string([]byte(salt)))
 }
