@@ -23,6 +23,11 @@ go get github.com/sirupsen/logrus
 go get github.com/spf13/viper
 ```
 
+* **gotenv**. Load environment variables from `.env` or `io.Reader` in Go. Type the command to install:
+```
+go get github.com/subosito/gotenv
+```
+
 * **golang-migrate**. Database migrations written in Go. Installation instruction see [here](https://github.com/golang-migrate/migrate)
 
 ## Run PostgreSQL in docker

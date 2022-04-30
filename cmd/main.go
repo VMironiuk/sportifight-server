@@ -8,9 +8,15 @@ import (
 	_ "github.com/lib/pq"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
+	"github.com/subosito/gotenv"
+	"os"
 )
 
 func main() {
+	if err := gotenv.Load(); err != nil {
+		logrus.Fatalf("an error occured while reading env variables: %s", err.Error())
+	}
+
 	if err := initConfig(); err != nil {
 		logrus.Fatalf("an error occured while reading configs: %s", err.Error())
 	}
@@ -19,7 +25,7 @@ func main() {
 		Host:     viper.GetString("db.host"),
 		Port:     viper.GetString("db.port"),
 		Username: viper.GetString("db.username"),
-		Password: "qwerty",
+		Password: os.Getenv("DB_PASSWORD"),
 		DBName:   viper.GetString("db.dbname"),
 		SSLMode:  viper.GetString("db.sslmode"),
 	})
