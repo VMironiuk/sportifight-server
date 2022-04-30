@@ -1,5 +1,5 @@
 # First setup & Auth
-🟡 Read configs
+🟢 Read configs
 
 🟡 Add swagger
 
