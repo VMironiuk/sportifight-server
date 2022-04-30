@@ -15,6 +15,11 @@ go get github.com/lib/pq
 
 * **golang-migrate**. Database migrations written in Go. Installation instruction see [here](https://github.com/golang-migrate/migrate)
 
+* **logrus**. Structured, pluggable logging for Go. To install type the command:
+```
+go get github.com/sirupsen/logrus
+```
+
 ## Run PostgreSQL in docker
 
 1. Fetch postgres. Type the command:
