@@ -13,12 +13,17 @@ go get github.com/jmoiron/sqlx
 go get github.com/lib/pq
 ```
 
-* **golang-migrate**. Database migrations written in Go. Installation instruction see [here](https://github.com/golang-migrate/migrate)
-
 * **logrus**. Structured, pluggable logging for Go. To install type the command:
 ```
 go get github.com/sirupsen/logrus
 ```
+
+* **viper**. Go configuration with fangs. Type the command to install:
+```
+go get github.com/spf13/viper
+```
+
+* **golang-migrate**. Database migrations written in Go. Installation instruction see [here](https://github.com/golang-migrate/migrate)
 
 ## Run PostgreSQL in docker
 
