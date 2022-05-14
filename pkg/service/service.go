@@ -7,6 +7,7 @@ import (
 
 type Auth interface {
 	CreateUser(user sportifight.User) (int, error)
+	GenerateToken(username string, pawwsord string) (string, error)
 }
 
 type Service struct {

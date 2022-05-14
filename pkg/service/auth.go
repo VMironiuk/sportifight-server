@@ -3,6 +3,7 @@ package service
 import (
 	"crypto/sha1"
 	"fmt"
+
 	"github.com/VMironiuk/sportifight-server"
 	"github.com/VMironiuk/sportifight-server/pkg/repository"
 )
@@ -24,6 +25,11 @@ func NewAuthService(repo repository.Auth) *AuthService {
 func (s *AuthService) CreateUser(user sportifight.User) (int, error) {
 	user.Password = generatePasswordHash(user.Password)
 	return s.repo.CreateUser(user)
+}
+
+func (s *AuthService) GenerateToken(username string, pawwsord string) (string, error) {
+	// TODO: add implementation
+	return "test_token", nil
 }
 
 func generatePasswordHash(password string) string {
